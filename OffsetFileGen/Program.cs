@@ -53,7 +53,7 @@ namespace OffsetFileGen
                     dataArc.GetFileInformation(line, out long offset, out uint compSize, out uint decompSize, out bool regional, region);
                     if (offset != 0)
                     {
-                        file.WriteLine(line + ',' + offset.ToString("X"));
+                        file.WriteLine($"{line},{offset.ToString("X")},{compSize.ToString("X")}");
                     }
                    
                 }
