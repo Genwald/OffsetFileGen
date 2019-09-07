@@ -48,6 +48,7 @@ namespace OffsetFileGen
             ArcCross.Arc dataArc = new ArcCross.Arc(arcPath);
             using (System.IO.StreamWriter file = new System.IO.StreamWriter("Offsets.txt"))
             {
+                file.WriteLine($"Arc Version: {dataArc.Version.ToString("X")}  Region: {regionName}");
                 foreach (string line in lines)
                 {
                     dataArc.GetFileInformation(line, out long offset, out uint compSize, out uint decompSize, out bool regional, region);
